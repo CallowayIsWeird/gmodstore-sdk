@@ -1,0 +1,33 @@
+name: Bug Report
+description: Report a bug with the SDK
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: SDK Version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Minimal code to reproduce the issue
+      render: typescript
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: Runtime
+      placeholder: "Node 22 / Bun 1.2 / Deno 2.0"
+    validations:
+      required: false
