@@ -92,7 +92,7 @@ export class HttpClient {
   }
 
   private buildUrl(path: string, query?: Record<string, unknown>): URL {
-    const url = new URL(this.baseUrl + path);
+    const url = new URL(path, this.baseUrl);
     if (!query) return url;
 
     for (const [key, value] of Object.entries(query)) {
