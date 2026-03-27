@@ -1,6 +1,6 @@
 {
   "name": "@callowayisweird/gmodstore-sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeScript SDK for the GModStore (Pivity) API v3",
   "license": "MIT",
   "author": "CallowayIsWeird",
