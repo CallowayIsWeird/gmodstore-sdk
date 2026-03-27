@@ -1,0 +1,54 @@
+{
+  "name": "@callowayisweird/gmodstore-sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for the GModStore (Pivity) API v3",
+  "license": "MIT",
+  "author": "CallowayIsWeird",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CallowayIsWeird/gmodstore-sdk"
+  },
+  "keywords": [
+    "gmodstore",
+    "pivity",
+    "garrys-mod",
+    "gmod",
+    "api",
+    "sdk",
+    "typescript"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "openapi.json"
+  ],
+  "scripts": {
+    "generate": "openapi-typescript openapi.json -o src/generated/openapi.ts",
+    "build": "npm run generate && tsup",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "openapi-typescript": "^7.6.1",
+    "tsup": "^8.4.0",
+    "typescript": "~5.9.3",
+    "vitest": "^3.0.0"
+  }
+}
